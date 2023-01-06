@@ -1,12 +1,14 @@
 {
-  "short_name": "Project Name",
-  "name": "Project Name",
+  "short_name": "Project scrapy",
+  "name": "scrapy the happy scraper",
   "version": "1.0.0",
   "description": "…",
+
   "manifest_version": 3,
   "action": {
     "default_popup": "popup.html",
-    "default_title": "popup"
+    "default_title": "popup",
+    "css": "style.css"
   },
   "content_scripts": [
     {

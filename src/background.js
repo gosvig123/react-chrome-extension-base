@@ -1,17 +1,17 @@
-const greet = (name) => console.log(`Hello, ${name}`)
-
-greet('Jon Snw')
-
-
-chrome.runtime.onMessage.addListener(function(req, sender, sendResponse) {
-  console.log("received Message", req)
-  
-  chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-    let url = tabs[0].url;
-    console.log('from background', url)
-
-    chrome.tabs.sendMessage(tabs[0].id, {actionType:'show-url', url})
-  });
-
-  sendResponse({ack:true})
-})
+// chrome.runtime.onMessage.addListener(async function (
+//   req,
+//   sender,
+//   sendResponse
+// ) {
+//   if (req.action === 'initiate scrape') {
+//     console.log('test')
+//     chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+//       let url = tabs[0].url
+//       const dataToBePassed = await sendDataToServer(url)
+//       chrome.runtime.sendResponse({
+//         action: 'display-data',
+//         data: dataToBePassed,
+//       })
+//     })
+//   }
+// })
